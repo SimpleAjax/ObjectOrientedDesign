@@ -71,7 +71,7 @@ class Catalog {
 
 class SearchService {
     Catalog catalog;
-    public List<FlightSchedule> findFlightsByDate(Date date){};
+    public List<FlightSchedule> findFlightsByDate(Date date){ return null; };
 }
 
 class BookingService {
@@ -83,14 +83,13 @@ class BookingService {
         Booking booking = new Booking(flightSchedule, customer, seat);
         return booking;
     }
-    private FlightScheduleSeat fetchAvailableFlightScheduleSeat(){};
+    private FlightScheduleSeat fetchAvailableFlightScheduleSeat(){ return null; };
 }
 
 class PaymentService {
     boolean makePayment(Booking booking) {
         // third party call to :
-        booking.customer.account.paymentMethod;
-        booking.seat.cost;
+        return new ExternalPartyService().callThirdParty("Stripe", booking);
     }
 }
 
@@ -100,8 +99,8 @@ class Payment {
 }
 
 class ExternalPartyService {
-    callThirdParty("third party name", Object object) {
-
+    public boolean callThirdParty(String ThirdPartyName, Object object) {
+        return true;
     }
 }
 
